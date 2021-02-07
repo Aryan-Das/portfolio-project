@@ -1,0 +1,23 @@
+[0;1;32m●[0m gunicorn.service - gunicorn daemon
+     Loaded: loaded (/etc/systemd/system/gunicorn.service; enabled; vendor preset: enabled)
+     Active: [0;1;32mactive (running)[0m since Sun 2021-02-07 17:29:58 UTC; 2min 18s ago
+TriggeredBy: [0;1;32m●[0m gunicorn.socket
+   Main PID: 49955 (gunicorn)
+      Tasks: 4 (limit: 1137)
+     Memory: 94.0M
+     CGroup: /system.slice/gunicorn.service
+             ├─49955 /home/djangodeploy/environments/portfolio/bin/python3 /home/djangodeploy/environments/portfolio/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/djangodeploy/portfolio-project/portfolio-project.sock portfolio.wsgi:application
+             ├─49968 /home/djangodeploy/environments/portfolio/bin/python3 /home/djangodeploy/environments/portfolio/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/djangodeploy/portfolio-project/portfolio-project.sock portfolio.wsgi:application
+             ├─49969 /home/djangodeploy/environments/portfolio/bin/python3 /home/djangodeploy/environments/portfolio/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/djangodeploy/portfolio-project/portfolio-project.sock portfolio.wsgi:application
+             └─49970 /home/djangodeploy/environments/portfolio/bin/python3 /home/djangodeploy/environments/portfolio/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/djangodeploy/portfolio-project/portfolio-project.sock portfolio.wsgi:application
+
+Feb 07 17:29:58 django2-portfolio systemd[1]: Started gunicorn daemon.
+Feb 07 17:29:59 django2-portfolio gunicorn[49955]: [2021-02-07 17:29:59 +0000] [49955] [INFO] Starting gunicorn 20.0.4
+Feb 07 17:29:59 django2-portfolio gunicorn[49955]: [2021-02-07 17:29:59 +0000] [49955] [INFO] Listening at: unix:/run/gunicorn.sock (49955)
+Feb 07 17:29:59 django2-portfolio gunicorn[49955]: [2021-02-07 17:29:59 +0000] [49955] [INFO] Using worker: sync
+Feb 07 17:29:59 django2-portfolio gunicorn[49968]: [2021-02-07 17:29:59 +0000] [49968] [INFO] Booting worker with pid: 49968
+Feb 07 17:29:59 django2-portfolio gunicorn[49969]: [2021-02-07 17:29:59 +0000] [49969] [INFO] Booting worker with pid: 49969
+Feb 07 17:29:59 django2-portfolio gunicorn[49970]: [2021-02-07 17:29:59 +0000] [49970] [INFO] Booting worker with pid: 49970
+Feb 07 17:31:57 django2-portfolio gunicorn[49970]: Invalid HTTP_HOST header: 'localhost'. You may need to add 'localhost' to ALLOWED_HOSTS.
+Feb 07 17:31:57 django2-portfolio gunicorn[49970]: Bad Request: /
+Feb 07 17:31:57 django2-portfolio gunicorn[49970]:  - - [07/Feb/2021:17:31:57 +0000] "GET / HTTP/1.1" 400 56671 "-" "curl/7.68.0"
